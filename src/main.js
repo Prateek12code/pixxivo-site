@@ -223,46 +223,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const form = document.getElementById("contactForm");
-const statusEl = document.getElementById("formStatus");
+const status = document.getElementById("formStatus");
 
-// Change this ONLY if your worker route is different
-const WORKER_URL = "https://pixxivo-contact.krishaeo-code.workers.dev";
-
-if (form && statusEl) {
+if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = form.name?.value?.trim();
-    const email = form.email?.value?.trim();
-    const message = form.message?.value?.trim();
+    const data = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
+    };
 
-    if (!name || !email || !message) {
-      statusEl.textContent = "Please fill all fields.";
-      return;
-    }
-
-    statusEl.textContent = "Sending...";
+    status.textContent = "Sending...";
 
     try {
-      const res = await fetch(WORKER_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
+      const res = await fetch(
+        "https://pixxivo-contact.krishaeo-code.workers.dev",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
 
-      // show server text if it failed (SUPER useful)
-      const text = await res.text();
+      if (!res.ok) throw new Error("Request failed");
 
-      if (!res.ok) {
-        throw new Error(text || `Request failed (${res.status})`);
-      }
-
-      statusEl.textContent = "Message sent ✅";
+      status.textContent = "Message sent ✅";
       form.reset();
     } catch (err) {
-      console.error("Contact form error:", err);
-      statusEl.textContent =
-        "Failed ❌ " + (err?.message ? err.message : "Try again");
+      status.textContent = "Failed ❌ Try again";
+      console.error(err);
     }
   });
 }
