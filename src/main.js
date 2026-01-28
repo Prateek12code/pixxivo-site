@@ -223,37 +223,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+const statusEl = document.getElementById("formStatus");
 
-if (form) {
+// Change this ONLY if your worker route is different
+const WORKER_URL = "https://pixxivo-contact.krishaeo-code.workers.dev/contact";
+
+if (form && statusEl) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
+    const name = form.name?.value?.trim();
+    const email = form.email?.value?.trim();
+    const message = form.message?.value?.trim();
 
-    status.textContent = "Sending...";
+    if (!name || !email || !message) {
+      statusEl.textContent = "Please fill all fields.";
+      return;
+    }
+
+    statusEl.textContent = "Sending...";
 
     try {
-      const res = await fetch(
-        "https://pixxivo-contact.krishaeo-code.workers.dev/",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-      if (!res.ok) throw new Error();
+      // show server text if it failed (SUPER useful)
+      const text = await res.text();
 
-      status.textContent = "Message sent ✅";
+      if (!res.ok) {
+        throw new Error(text || `Request failed (${res.status})`);
+      }
+
+      statusEl.textContent = "Message sent ✅";
       form.reset();
-    } catch {
-      status.textContent = "Failed ❌ Try again";
+    } catch (err) {
+      console.error("Contact form error:", err);
+      statusEl.textContent =
+        "Failed ❌ " + (err?.message ? err.message : "Try again");
     }
   });
 }
-
