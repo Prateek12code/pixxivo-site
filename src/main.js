@@ -226,7 +226,7 @@ const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("formStatus");
 
 // Change this ONLY if your worker route is different
-const WORKER_URL = "https://pixxivo-contact.krishaeo-code.workers.dev/contact";
+const WORKER_URL = "https://pixxivo-contact.krishaeo-code.workers.dev/";
 
 if (form && statusEl) {
   form.addEventListener("submit", async (e) => {
