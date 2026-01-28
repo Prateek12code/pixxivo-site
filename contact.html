@@ -139,111 +139,15 @@
                 Choose an intent so we can route your message correctly.
               </p>
 
-              <form id="contactForm" class="mt-6 space-y-5" novalidate>
-                <div class="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label class="text-sm font-medium">Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      autocomplete="name"
-                      placeholder="Your name"
-                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
-                      required
-                    />
-                    <p class="mt-2 text-xs text-base-muted">
-                      So we know who to reply to.
-                    </p>
-                  </div>
+              <form id="contactForm">
+  <input name="name" placeholder="Your name" />
+  <input name="email" placeholder="Your email" />
+  <textarea name="message" placeholder="Message"></textarea>
 
-                  <div>
-                    <label class="text-sm font-medium">Email</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autocomplete="email"
-                      placeholder="you@domain.com"
-                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
-                      required
-                    />
-                    <p class="mt-2 text-xs text-base-muted">
-                      We’ll respond to this address.
-                    </p>
-                  </div>
-                </div>
+  <button type="submit">Send</button>
+  <p id="formStatus"></p>
+</form>
 
-                <div class="grid md:grid-cols-2 gap-5">
-                  <div>
-                    <label class="text-sm font-medium"
-                      >Affiliation (optional)</label
-                    >
-                    <input
-                      id="affiliation"
-                      name="affiliation"
-                      type="text"
-                      placeholder="Hospital / Lab / Organization"
-                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
-                    />
-                  </div>
-
-                  <div>
-                    <label class="text-sm font-medium">Intent</label>
-                    <select
-                      id="intent"
-                      name="intent"
-                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
-                      required
-                    >
-                      <option value="research">Research collaboration</option>
-                      <option value="pilot">Clinical pilot / evaluation</option>
-                      <option value="partnership">
-                        Institutional partnership
-                      </option>
-                      <option value="press">Press / media</option>
-                      <option value="general">General inquiry</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label class="text-sm font-medium">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    placeholder="Share context, your goal, and what you’re looking for…"
-                    class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm resize-none"
-                    required
-                  ></textarea>
-                  <p id="hint" class="mt-2 text-xs text-base-muted"></p>
-                </div>
-
-                <!-- Status line -->
-                <div
-                  id="statusBox"
-                  class="hidden rounded-xl border border-base-line px-4 py-3 text-sm"
-                ></div>
-
-                <div
-                  class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"
-                >
-                  <button
-                    id="sendBtn"
-                    type="submit"
-                    class="btn btn-primary w-full sm:w-auto"
-                    data-btn
-                  >
-                    Send message
-                  </button>
-
-                  <p class="text-xs text-base-muted">
-                    By sending, you agree to share this info with Pixxivo for
-                    contacting you back.
-                  </p>
-                </div>
-              </form>
             </div>
           </div>
         </div>
