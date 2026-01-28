@@ -224,36 +224,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const form = document.getElementById("contactForm");
 const status = document.getElementById("formStatus");
+const charCount = document.getElementById("charCount");
+const msg = document.getElementById("message");
+
+const ENDPOINT = "https://pixxivo-contact.krishaeo-code.workers.dev";
+
+if (msg && charCount) {
+  const updateCount = () => {
+    const n = msg.value.length;
+    charCount.textContent = `${n} / 1200`;
+  };
+  msg.addEventListener("input", updateCount);
+  updateCount();
+}
 
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Honeypot check (bots fill hidden fields)
+    const trap = form.querySelector("#company");
+    if (trap && trap.value.trim().length > 0) return;
+
     const data = {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
+      intent: form.intent?.value || "general",
       message: form.message.value.trim(),
     };
 
-    status.textContent = "Sending...";
+    if (!data.name || !data.email || !data.message) {
+      status.textContent = "Please fill all fields.";
+      return;
+    }
+
+    status.textContent = "Sending…";
 
     try {
-      const res = await fetch(
-        "https://pixxivo-contact.krishaeo-code.workers.dev",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
 
       status.textContent = "Message sent ✅";
       form.reset();
+      if (msg && charCount) charCount.textContent = "0 / 1200";
     } catch (err) {
-      status.textContent = "Failed ❌ Try again";
       console.error(err);
+      status.textContent = "Failed ❌ Try again";
     }
   });
 }
