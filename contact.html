@@ -89,69 +89,149 @@
     </header>
 
     <!-- PAGE -->
-    <main class="bg-base-bg">
-      <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
-        <div class="grid lg:grid-cols-12 gap-10 items-start">
-          <!-- Left copy -->
-          <div class="lg:col-span-5" data-fade>
-            <span class="badge">Contact • Collaboration • Pilots</span>
+    <section class="bg-base-bg">
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <!-- Left: Copy -->
+      <div class="lg:col-span-5" data-fade>
+        <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+          Contact
+        </p>
 
-            <h1 class="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">
-              Connect with Pixxivo
-            </h1>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold tracking-tight leading-tight">
+          Let’s build something real.
+        </h1>
 
-            <p class="mt-4 text-base-muted leading-relaxed">
-              Research collaboration, pilot evaluation, institutional
-              partnerships, or general inquiries — send a message and we’ll
-              respond via
-              <strong class="text-base-ink">contact@pixxivo.com</strong>.
-            </p>
+        <p class="mt-4 text-base-muted leading-relaxed">
+          If you're a researcher, hospital, lab, or a builder who wants to collaborate,
+          send a message. We usually reply within 24–48 hours.
+        </p>
 
-            <div
-              class="mt-8 rounded-2xl border border-base-line bg-base-card p-6"
-            >
-              <p class="text-sm font-semibold">Preferred channels</p>
-              <p class="mt-2 text-sm text-base-muted">
-                Email:
-                <a
-                  class="underline hover:text-base-ink"
-                  href="mailto:contact@pixxivo.com"
-                  >contact@pixxivo.com</a
-                >
-                <br />
-                Location: Trichy, Tamil Nadu • India
-              </p>
-            </div>
-
-            <p class="mt-6 text-sm text-base-muted">
-              Note: Pixxivo X1 is in active development and not available for
-              public sale. We welcome responsible collaboration.
-            </p>
+        <div class="mt-8 space-y-4">
+          <div class="rounded-2xl border border-base-line bg-base-card p-5">
+            <div class="text-sm text-base-muted">Email</div>
+            <div class="mt-1 text-base-ink font-medium">contact@pixxivo.com</div>
           </div>
 
-          <!-- Form -->
-          <div class="lg:col-span-7" data-fade>
-            <div
-              class="rounded-2xl border border-base-line bg-base-card p-6 md:p-8"
-            >
-              <h2 class="text-lg font-semibold">Send a message</h2>
-              <p class="mt-2 text-sm text-base-muted">
-                Choose an intent so we can route your message correctly.
-              </p>
+          <div class="rounded-2xl border border-base-line bg-base-card p-5">
+            <div class="text-sm text-base-muted">Location</div>
+            <div class="mt-1 text-base-ink font-medium">Trichy, Tamil Nadu, India</div>
+          </div>
 
-              <form id="contactForm">
-  <input name="name" placeholder="Your name" />
-  <input name="email" placeholder="Your email" />
-  <textarea name="message" placeholder="Message"></textarea>
-
-  <button type="submit">Send</button>
-  <p id="formStatus"></p>
-</form>
-
+          <div class="rounded-2xl border border-base-line bg-base-card p-5">
+            <div class="text-sm text-base-muted">What to include</div>
+            <div class="mt-2 text-sm text-base-muted leading-relaxed">
+              Context, your role, what you need, and how fast you want to move.
             </div>
           </div>
         </div>
-      </section>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="lg:col-span-7" data-fade>
+        <div class="glass-nav rounded-3xl border border-base-line bg-base-card/60 p-6 md:p-8">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-semibold tracking-tight">Send a message</h2>
+              <p class="mt-1 text-sm text-base-muted">
+                This goes directly to the Pixxivo inbox + you’ll get an auto-reply.
+              </p>
+            </div>
+            <div class="hidden sm:block text-xs text-base-muted">
+              Secure · Minimal · Fast
+            </div>
+          </div>
+
+          <form id="contactForm" class="mt-8 space-y-5">
+            <!-- Honeypot (anti-spam) -->
+            <input
+              type="text"
+              name="company"
+              id="company"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="text-sm text-base-muted" for="name">Your name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Prateek"
+                  class="mt-2 w-full rounded-2xl border border-base-line bg-base-bg px-4 py-3 text-base-ink placeholder:text-base-muted/60 outline-none focus:border-base-ink/30 focus:ring-2 focus:ring-base-ink/10"
+                />
+              </div>
+
+              <div>
+                <label class="text-sm text-base-muted" for="email">Your email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  class="mt-2 w-full rounded-2xl border border-base-line bg-base-bg px-4 py-3 text-base-ink placeholder:text-base-muted/60 outline-none focus:border-base-ink/30 focus:ring-2 focus:ring-base-ink/10"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="text-sm text-base-muted" for="intent">Intent</label>
+              <select
+                id="intent"
+                name="intent"
+                class="mt-2 w-full rounded-2xl border border-base-line bg-base-bg px-4 py-3 text-base-ink outline-none focus:border-base-ink/30 focus:ring-2 focus:ring-base-ink/10"
+              >
+                <option value="collaboration">Collaboration</option>
+                <option value="pilot">Hospital / Pilot</option>
+                <option value="media">Media / Press</option>
+                <option value="general">General</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-sm text-base-muted" for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="6"
+                placeholder="Tell us what you’re working on and how we can help…"
+                class="mt-2 w-full resize-none rounded-2xl border border-base-line bg-base-bg px-4 py-3 text-base-ink placeholder:text-base-muted/60 outline-none focus:border-base-ink/30 focus:ring-2 focus:ring-base-ink/10"
+              ></textarea>
+
+              <div class="mt-2 flex items-center justify-between text-xs text-base-muted">
+                <span>No sensitive personal/medical data here.</span>
+                <span id="charCount">0 / 1200</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between pt-2">
+              <p id="formStatus" class="text-sm text-base-muted"></p>
+
+              <button
+                type="submit"
+                class="btn btn-primary px-6 py-3 rounded-2xl"
+                data-btn
+              >
+                Send message
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-6 text-xs text-base-muted">
+            By sending, you agree we can reply to your email. No marketing spam.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <!-- FOOTER -->
