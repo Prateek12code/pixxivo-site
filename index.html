@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pixxivo — R&D in Hardware, Software & AI</title>
+    <meta
+      name="description"
+      content="Pixxivo is an Indian R&D company building high-integrity hardware, software, and AI systems for real-world deployment."
+    />
+
+    <!-- OpenGraph -->
+    <meta
+      property="og:title"
+      content="Pixxivo — R&D in Hardware, Software & AI"
+    />
+    <meta
+      property="og:description"
+      content="An Indian R&D company building high-integrity systems for real-world deployment."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:url" content="https://pixxivo.com" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pixxivo — R&D in Hardware, Software & AI"
+    />
+    <meta
+      name="twitter:description"
+      content="High-integrity hardware, software, and AI systems — built for deployment."
+    />
+    <meta name="twitter:image" content="/og.jpg" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --ui-font:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter,
+          Arial, sans-serif;
+      }
+      body {
+        font-family: var(--ui-font);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- PRELOADER (same) -->
+    <div id="preloader" aria-hidden="true">
+      <div class="pre-wrap">
+        <div class="pre-left">
+          <div class="pre-label">LOADING</div>
+          <div class="pre-sub">PIXXIVO SYSTEMS</div>
+        </div>
+        <div class="pre-right">
+          <div
+            id="preDots"
+            class="dotnum"
+            aria-label="Loading percentage"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-3 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <div
+          class="glass-nav rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between"
+        >
+          <!-- Brand -->
+          <div class="flex items-center">
+            <a
+              href="index.html"
+              class="text-base-ink font-semibold text-sm tracking-[0.22em] uppercase"
+            >
+              PIXXIVO
+            </a>
+            <div class="hidden md:block h-5 w-px bg-base-line mx-4"></div>
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-7 text-sm">
+            <a href="#about" class="text-base-muted hover:text-base-ink"
+              >About</a
+            >
+            <a href="#capabilities" class="text-base-muted hover:text-base-ink"
+              >Capabilities</a
+            >
+            <a href="#now" class="text-base-muted hover:text-base-ink">Now</a>
+            <a href="x1.html" class="text-base-muted hover:text-base-ink">X1</a>
+            <a href="contact.html" class="btn btn-primary">Contact</a>
+          </nav>
+
+          <!-- Mobile -->
+          <button
+            id="menuBtn"
+            class="md:hidden btn btn-ghost px-4 py-2"
+            aria-expanded="false"
+          >
+            Menu
+          </button>
+          <div
+            id="mobileMenu"
+            class="glass-nav md:hidden absolute left-0 right-0 top-[calc(100%+12px)] rounded-2xl px-4 py-4 opacity-0 -translate-y-2 scale-[0.98] pointer-events-none transition-all duration-300 ease-out origin-top"
+            role="dialog"
+            aria-label="Mobile navigation"
+          >
+            <div class="flex flex-col gap-3 text-sm">
+              <a href="index.html#about" class="text-base-ink">Company</a>
+              <a
+                href="index.html#capabilities"
+                class="text-base-muted hover:text-base-ink"
+                >Capabilities</a
+              >
+              <a
+                href="index.html#now"
+                class="text-base-muted hover:text-base-ink"
+                >Now</a
+              >
+              <a href="x1.html" class="text-base-muted hover:text-base-ink"
+                >X1</a
+              >
+              <a href="contact.html" class="btn btn-primary w-full">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-3xl" data-fade>
+          <span class="badge"
+            >🇮🇳 Proudly built in India • Trichy, Tamil Nadu</span
+          >
+
+          <h1
+            class="mt-6 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]"
+          >
+            Build systems that
+            <span class="underline decoration-base-line underline-offset-8"
+              >matter</span
+            >.
+          </h1>
+
+          <p class="mt-6 text-lg text-base-muted leading-relaxed">
+            Pixxivo is an Indian R&D company building high-integrity hardware,
+            software, and AI systems for real-world deployment — not demos.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="x1.html" class="btn btn-primary" data-btn
+              >Explore Pixxivo X1</a
+            >
+            <a href="#capabilities" class="btn btn-ghost" data-btn
+              >What we do</a
+            >
+          </div>
+
+          <p class="mt-8 text-sm text-base-muted">
+            Current focus: non-invasive health sensing platforms designed for
+            supervised clinical workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-6" data-fade>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              About Pixxivo
+            </h2>
+            <p class="mt-4 text-base-muted leading-relaxed">
+              Pixxivo is built around a simple idea: great technology should be
+              trustworthy, fast, and usable in real conditions. We build compact
+              hardware, clean software, and applied intelligence that supports
+              humans — with responsibility by design.
+            </p>
+            <p class="mt-4 text-base-muted leading-relaxed">
+              We’re not chasing hype cycles. We’re building foundations: sensing
+              → processing → clarity → trust.
+            </p>
+
+            <p class="mt-6 text-sm text-base-muted">
+              Pixxivo was founded and is actively developed by
+              <span class="text-base-ink font-medium">Prateek</span>, focusing
+              on responsible, real-world R&D rather than speculative concepts.
+            </p>
+          </div>
+
+          <div class="lg:col-span-6" data-fade>
+            <div class="rounded-2xl border border-base-line bg-base-card p-6">
+              <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+                What Pixxivo is not
+              </p>
+              <ul class="mt-4 space-y-2 text-base-muted">
+                <li>
+                  <span class="text-base-ink font-medium">•</span> Not a
+                  consumer gadget brand.
+                </li>
+                <li>
+                  <span class="text-base-ink font-medium">•</span> Not a
+                  diagnosis shortcut.
+                </li>
+                <li>
+                  <span class="text-base-ink font-medium">•</span> Not built to
+                  replace professional judgment.
+                </li>
+              </ul>
+              <p class="mt-5 text-sm text-base-muted">
+                We build systems meant to be tested, validated, and trusted.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="max-w-2xl" data-fade>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+            Capabilities
+          </h2>
+          <p class="mt-4 text-base-muted">
+            Pixxivo operates as a full-stack R&D lab: devices, systems, and
+            intelligence — engineered to work together.
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-6" data-fade>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <h3 class="font-semibold">Hardware R&D</h3>
+            <p class="mt-3 text-sm text-base-muted leading-relaxed">
+              Compact sensing devices, embedded systems, rapid prototyping, and
+              iteration pipelines built for constrained environments.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <h3 class="font-semibold">Software Systems</h3>
+            <p class="mt-3 text-sm text-base-muted leading-relaxed">
+              Clear UX, robust pipelines, data logging, and maintainable
+              architecture designed for reliability and speed.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <h3 class="font-semibold">Applied AI</h3>
+            <p class="mt-3 text-sm text-base-muted leading-relaxed">
+              Practical intelligence that assists humans with consistency,
+              transparency, and responsible guardrails.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- (3) WHAT WE’RE BUILDING NOW -->
+    <section id="now" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-6" data-fade>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              What we’re building now
+            </h2>
+            <p class="mt-4 text-base-muted leading-relaxed">
+              We’re currently focused on Pixxivo X1 — a non-invasive health
+              sensing platform designed for supervised clinical workflows, pilot
+              evaluation, and research validation.
+            </p>
+            <div class="mt-8 flex gap-3">
+              <a href="x1.html" class="btn btn-primary" data-btn>View X1</a>
+              <a href="contact.html" class="btn btn-ghost" data-btn
+                >Request collaboration</a
+              >
+            </div>
+          </div>
+
+          <div class="lg:col-span-6" data-fade>
+            <div class="rounded-2xl border border-base-line bg-base-card p-6">
+              <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+                Focus card
+              </p>
+              <div class="mt-4 space-y-3 text-base-muted">
+                <div>
+                  <strong class="text-base-ink">System:</strong> Pixxivo X1
+                </div>
+                <div>
+                  <strong class="text-base-ink">Status:</strong> Active R&D
+                  prototype
+                </div>
+                <div>
+                  <strong class="text-base-ink">Seeking:</strong> research
+                  partners, supervised pilots, feedback
+                </div>
+                <div>
+                  <strong class="text-base-ink">Positioning:</strong> insights +
+                  monitoring support, not diagnosis
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (8: legal links) -->
+    <footer class="border-t border-base-line bg-base-bg">
+      <div
+        class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-base-muted"
+      >
+        <div data-fade>
+          <div class="text-base-ink font-medium">
+            Built in India. Designed for global healthcare systems.
+          </div>
+          <div class="mt-1 text-xs text-base-muted">
+            Founded & developed by
+            <span class="text-base-ink font-medium">Prateek</span>
+          </div>
+
+          <div class="mt-2">
+            © <span id="year"></span> Pixxivo • Trichy, Tamil Nadu
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4" data-fade>
+          <a href="x1.html" class="hover:text-base-ink">X1</a>
+          <a href="contact.html" class="hover:text-base-ink">Contact</a>
+          <a href="privacy.html" class="hover:text-base-ink">Privacy</a>
+          <a href="terms.html" class="hover:text-base-ink">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <script></script>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixxivo X1 — Non-Invasive Health Sensing</title>
+    <meta
+      name="description"
+      content="Pixxivo X1 is a non-invasive health sensing system designed for supervised clinical workflows and research validation."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --ui-font:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter,
+          Arial, sans-serif;
+      }
+      body {
+        font-family: var(--ui-font);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- PRELOADER (same) -->
+    <div id="preloader" aria-hidden="true">
+      <div class="pre-wrap">
+        <div class="pre-left">
+          <div class="pre-label">LOADING</div>
+          <div class="pre-sub">PIXXIVO SYSTEMS</div>
+        </div>
+
+        <div class="pre-right">
+          <div
+            id="preDots"
+            class="dotnum"
+            aria-label="Loading percentage"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <header class="sticky top-3 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <div
+          class="glass-nav rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between"
+        >
+          <!-- Brand -->
+          <div class="flex items-center">
+            <a
+              href="index.html"
+              class="text-base-ink font-semibold text-sm tracking-[0.22em] uppercase"
+            >
+              PIXXIVO
+            </a>
+            <div class="hidden md:block h-5 w-px bg-base-line mx-4"></div>
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-7 text-sm">
+            <a href="index.html" class="text-base-muted hover:text-base-ink"
+              >Company</a
+            >
+            <a href="#how" class="text-base-muted hover:text-base-ink"
+              >How it works</a
+            >
+            <a href="#status" class="text-base-muted hover:text-base-ink"
+              >Status</a
+            >
+            <a href="#media" class="text-base-muted hover:text-base-ink"
+              >Prototypes</a
+            >
+            <a href="contact.html" class="btn btn-primary">Contact</a>
+          </nav>
+
+          <!-- Mobile -->
+          <button id="menuBtn" class="md:hidden btn btn-ghost px-4 py-2">
+            Menu
+          </button>
+          <!-- Mobile Menu Panel -->
+          <div
+            id="mobileMenu"
+            class="glass-nav md:hidden absolute left-0 right-0 top-[calc(100%+12px)] rounded-2xl px-4 py-4 opacity-0 -translate-y-2 scale-[0.98] pointer-events-none transition-all duration-300 ease-out origin-top"
+            role="dialog"
+            aria-label="Mobile navigation"
+          >
+            <div class="flex flex-col gap-3 text-sm">
+              <a
+                href="index.html#about"
+                class="text-base-muted hover:text-base-ink"
+                >Company</a
+              >
+              <a href="x1.html" class="text-base-ink">X1</a>
+              <a href="x1.html#how" class="text-base-muted hover:text-base-ink"
+                >How it works</a
+              >
+              <a
+                href="x1.html#status"
+                class="text-base-muted hover:text-base-ink"
+                >Status</a
+              >
+              <a href="contact.html" class="btn btn-primary w-full">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO (clean & spacious) -->
+    <section class="bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <div class="max-w-3xl" data-fade>
+          <span class="badge">Pixxivo X1 • Non-invasive sensing platform</span>
+
+          <h1
+            class="mt-6 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]"
+          >
+            Non-invasive sensing, built for
+            <span class="underline decoration-base-line underline-offset-8"
+              >real workflows</span
+            >.
+          </h1>
+
+          <p class="mt-6 text-lg text-base-muted leading-relaxed">
+            Pixxivo X1 is a compact health sensing system designed for
+            supervised clinical workflows, pilot evaluations, and research
+            validation — with local processing and clear output presentation.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="#status" class="btn btn-primary" data-btn
+              >Development status</a
+            >
+            <a href="#prototype" class="btn btn-ghost" data-btn
+              >See prototype</a
+            >
+          </div>
+
+          <p class="mt-8 text-sm text-base-muted">
+            Important: X1 provides insights and monitoring support. It does not
+            provide diagnoses or replace clinicians.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-14">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" data-fade>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              Goal
+            </p>
+            <p class="mt-2 font-semibold">Fast insights</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Designed for time-sensitive environments.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              Operation
+            </p>
+            <p class="mt-2 font-semibold">Offline-first</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Local processing for reliability & privacy.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              Design
+            </p>
+            <p class="mt-2 font-semibold">Compact</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Built for point-of-care setups.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              Approach
+            </p>
+            <p class="mt-2 font-semibold">Responsible</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Assistive insights, not autonomous decisions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="max-w-2xl" data-fade>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+            How X1 works
+          </h2>
+          <p class="mt-4 text-base-muted">
+            A streamlined flow: capture → process → present. Designed for
+            clarity under pressure.
+          </p>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-4 gap-6" data-fade>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              01
+            </p>
+            <h3 class="mt-2 font-semibold">Capture</h3>
+            <p class="mt-2 text-sm text-base-muted">
+              Non-invasive sensors collect biological signals comfortably and
+              quickly.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              02
+            </p>
+            <h3 class="mt-2 font-semibold">Process</h3>
+            <p class="mt-2 text-sm text-base-muted">
+              Local algorithms condition and analyze signals to reduce noise and
+              extract features.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              03
+            </p>
+            <h3 class="mt-2 font-semibold">Present</h3>
+            <p class="mt-2 text-sm text-base-muted">
+              Outputs are displayed with context — designed to be understood in
+              seconds.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+              04
+            </p>
+            <h3 class="mt-2 font-semibold">Decide</h3>
+            <p class="mt-2 text-sm text-base-muted">
+              Clinicians interpret insights — judgment remains human, supported
+              by better signals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Technical toggle -->
+        <div class="mt-10" data-fade>
+          <details class="rounded-2xl border border-base-line bg-base-card p-6">
+            <summary class="cursor-pointer font-semibold">
+              Technical overview (for clinicians & researchers)
+            </summary>
+
+            <div class="mt-4 space-y-3 text-sm text-base-muted leading-relaxed">
+              <p>
+                X1 explores non-invasive optical sensing combined with signal
+                conditioning and pattern analysis. Engineering focuses on
+                repeatability, noise handling, and output clarity.
+              </p>
+              <p>
+                Processing is designed to be local-first to reduce latency and
+                support offline environments. Any future cloud features are
+                optional and privacy-conscious.
+              </p>
+              <p>
+                Outputs are positioned as <em>supportive insights</em> with
+                consistency checks — not autonomous medical conclusions.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT STATUS -->
+    <section id="status" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-6" data-fade>
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+              Development status
+            </h2>
+            <p class="mt-4 text-base-muted leading-relaxed">
+              Pixxivo X1 is in active research and development. We build
+              iteratively — test, refine, repeat — guided by practical
+              constraints and responsible positioning.
+            </p>
+
+            <div class="mt-8 flex gap-3">
+              <a href="contact.html" class="btn btn-primary" data-btn
+                >Partner / pilot</a
+              >
+              <a href="#ethics" class="btn btn-ghost" data-btn>Intended use</a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6" data-fade>
+            <div class="rounded-2xl border border-base-line bg-base-card p-6">
+              <p class="text-xs tracking-[0.22em] uppercase text-base-muted">
+                Reality check
+              </p>
+
+              <ul class="mt-4 space-y-3 text-base-muted">
+                <li>
+                  <strong class="text-base-ink">Stage:</strong> Active R&D
+                  prototype
+                </li>
+                <li>
+                  <strong class="text-base-ink">Validation:</strong> Research &
+                  pilot evaluation
+                </li>
+                <li>
+                  <strong class="text-base-ink">Regulatory:</strong>
+                  Pre-certification exploration
+                </li>
+                <li>
+                  <strong class="text-base-ink">Availability:</strong> Not for
+                  public sale
+                </li>
+              </ul>
+
+              <p class="mt-5 text-sm text-base-muted">
+                Timeline and readiness will depend on validation outcomes and
+                responsible deployment pathways.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROTOTYPE MEDIA -->
+    <section id="prototype" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div class="max-w-2xl" data-fade>
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
+            Prototype media
+          </h2>
+        </div>
+
+        <div class="mt-10 grid lg:grid-cols-12 gap-6 items-stretch" data-fade>
+          <!-- Video / GIF -->
+          <div
+            class="lg:col-span-7 rounded-2xl border border-base-line bg-base-card overflow-hidden"
+          >
+            <!-- Fixed media slot -->
+            <div class="h-64 sm:h-72 md:h-80 lg:h-full w-full overflow-hidden">
+              <video
+                class="h-full w-full object-cover cursor-zoom-in"
+                src="/media/demo.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+                data-lightbox
+              ></video>
+
+              <!-- GIF alternative
+      <img
+        src="/media/scan-flow.gif"
+        alt="Prototype demo"
+        class="h-full w-full object-cover"
+      />
+      -->
+            </div>
+          </div>
+
+          <!-- Images -->
+          <div class="lg:col-span-5 grid gap-6">
+            <!-- Prototype 1 -->
+            <div
+              class="rounded-2xl border border-base-line bg-base-card overflow-hidden"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="/media/prototype-1.webp"
+                  alt="Prototype image 1"
+                  class="h-full w-full object-cover object-center cursor-zoom-in"
+                  loading="lazy"
+                  data-lightbox
+                />
+              </div>
+            </div>
+
+            <!-- Prototype 2 -->
+            <div
+              class="rounded-2xl border border-base-line bg-base-card overflow-hidden"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="/media/prototype-2.webp"
+                  alt="Prototype image 2"
+                  class="h-full w-full object-cover object-center cursor-zoom-in"
+                  loading="lazy"
+                  data-lightbox
+                />
+              </div>
+            </div>
+
+            <!-- Prototype 3 -->
+            <div
+              class="rounded-2xl border border-base-line bg-base-card overflow-hidden"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="/media/prototype-3.webp"
+                  alt="Prototype image 3"
+                  class="h-full w-full object-cover object-center cursor-zoom-in"
+                  loading="lazy"
+                  data-lightbox
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6" data-fade>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="font-semibold">Iteration focus</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Sensor stability and repeatability improvements.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="font-semibold">Iteration focus</p>
+            <p class="mt-2 text-sm text-base-muted">
+              UI clarity, fast scanning flow, and feedback loops.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-base-line bg-base-card p-6">
+            <p class="font-semibold">Iteration focus</p>
+            <p class="mt-2 text-sm text-base-muted">
+              Enclosure refinement and ergonomic improvements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETHICS / INTENDED USE -->
+    <section id="ethics" class="border-t border-base-line bg-base-bg">
+      <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+        <div
+          class="rounded-2xl border border-base-line bg-base-card p-6"
+          data-fade
+        >
+          <h2 class="text-xl font-semibold">Intended use & responsibility</h2>
+          <p class="mt-3 text-base-muted leading-relaxed">
+            Pixxivo X1 is designed to assist healthcare professionals and
+            supervised users by providing health insights and monitoring
+            support. It does not provide diagnoses, replace doctors, or make
+            medical decisions.
+          </p>
+          <p class="mt-3 text-sm text-base-muted">
+            Patient safety, privacy, and clinical autonomy are treated as
+            first-class engineering requirements.
+          </p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4" data-fade>
+          <a href="contact.html" class="btn btn-primary" data-btn
+            >Discuss collaboration</a
+          >
+          <a href="index.html" class="btn btn-ghost" data-btn
+            >Back to company</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-[999] hidden items-center justify-center p-4"
+      aria-hidden="true"
+    >
+      <div id="lightboxBackdrop" class="absolute inset-0 bg-black/70"></div>
+
+      <button
+        id="lightboxClose"
+        class="absolute top-4 right-4 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur-md"
+        aria-label="Close"
+      >
+        Close
+      </button>
+
+      <div
+        class="relative z-10 max-h-[90vh] w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-black"
+      >
+        <img
+          id="lightboxImg"
+          alt=""
+          class="hidden h-auto w-full max-h-[90vh] object-contain"
+        />
+
+        <video
+          id="lightboxVid"
+          class="hidden w-full max-h-[90vh]"
+          controls
+          playsinline
+        ></video>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-base-line bg-base-bg">
+      <div
+        class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-base-muted"
+      >
+        <div data-fade>
+          <div class="text-base-ink font-medium">
+            Built in India. Designed for global healthcare systems.
+          </div>
+          <div class="mt-1 text-xs text-base-muted">
+            Founded & developed by
+            <span class="text-base-ink font-medium">Prateek</span>
+          </div>
+
+          <div class="mt-2">
+            © <span id="year"></span> Pixxivo • Trichy, Tamil Nadu
+          </div>
+        </div>
+
+        <div class="flex gap-4" data-fade>
+          <a href="index.html" class="hover:text-base-ink">Company</a>
+          <a href="contact.html" class="hover:text-base-ink">Contact</a>
+        </div>
+      </div>
+      <a href="privacy.html" class="hover:text-base-ink">Privacy</a>
+      <a href="terms.html" class="hover:text-base-ink">Terms</a>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

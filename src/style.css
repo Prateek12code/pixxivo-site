@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-bg text-base-ink antialiased;
+}
+
+a,
+button {
+  transition: all 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.25);
+}
+
+/* ===============================
+   Liquid Glass Navbar
+================================ */
+.glass-nav {
+  background: rgba(242, 243, 244, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(228, 231, 235, 0.7);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ===============================
+   Link underline hover (premium)
+================================ */
+.navlink {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  background: rgba(17, 24, 39, 0.35);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.navlink:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===============================
+   Button system (monochrome)
+================================ */
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-medium;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: #0b0f14;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #111827;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0px);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(228, 231, 235, 0.9);
+  color: #0b0f14;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active {
+  transform: translateY(0px);
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid rgba(228, 231, 235, 0.8);
+  color: #111827;
+}
+
+/* ===============================
+   PRELOADER (unchanged)
+================================ */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #f2f3f4;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.pre-wrap {
+  width: min(1100px, 92vw);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+}
+
+.pre-label {
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.pre-sub {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #4b5563;
+}
+
+.dotnum {
+  display: flex;
+  gap: 18px;
+}
+
+.dot-digit {
+  display: grid;
+  grid-template-columns: repeat(5, 14px);
+  gap: 8px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(18, 22, 28, 0.18);
+}
+
+.dot.on {
+  background: rgba(18, 22, 28, 0.92);
+}
+
+/* --- Preloader responsive fix --- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #f2f3f4;
+}
+
+.pre-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* Desktop layout (default) */
+.pre-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pre-right {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+/* MOBILE FIX */
+@media (max-width: 640px) {
+  .pre-wrap {
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .pre-left {
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+  .pre-right {
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
+
+  .dotnum {
+    font-size: 3rem; /* prevent overflow */
+  }
+}

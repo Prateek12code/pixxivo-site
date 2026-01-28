@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Pixxivo</title>
+    <meta
+      name="description"
+      content="Contact Pixxivo for research collaboration, pilot programs, and general inquiries."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <style>
+      :root {
+        --ui-font:
+          ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter,
+          Arial, sans-serif;
+      }
+      body {
+        font-family: var(--ui-font);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- PRELOADER (same) -->
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+      <div class="pre-wrap">
+        <div class="pre-left">
+          <div class="pre-label">LOADING</div>
+          <div class="pre-sub">PIXXIVO SYSTEMS</div>
+        </div>
+
+        <div class="pre-right">
+          <div id="preDots" class="dotnum"></div>
+          <div class="pre-unit">%</div>
+        </div>
+      </div>
+    </div>
+
+    <header class="sticky top-3 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <div
+          class="glass-nav rounded-2xl px-4 sm:px-6 py-3 flex items-center justify-between"
+        >
+          <!-- Brand -->
+          <div class="flex items-center">
+            <a
+              href="index.html"
+              class="text-base-ink font-semibold text-sm tracking-[0.22em] uppercase"
+            >
+              PIXXIVO
+            </a>
+            <div class="hidden md:block h-5 w-px bg-base-line mx-4"></div>
+          </div>
+
+          <!-- Desktop Nav -->
+          <nav class="hidden md:flex items-center gap-7 text-sm">
+            <a href="index.html" class="text-base-muted hover:text-base-ink"
+              >Company</a
+            >
+            <a href="x1.html" class="text-base-muted hover:text-base-ink">X1</a>
+            <a href="#" class="text-base-ink font-medium">Contact</a>
+          </nav>
+
+          <!-- Mobile -->
+          <button id="menuBtn" class="md:hidden btn btn-ghost px-4 py-2">
+            Menu
+          </button>
+          <!-- Mobile Menu Panel -->
+          <div
+            id="mobileMenu"
+            class="glass-nav md:hidden absolute left-0 right-0 top-[calc(100%+12px)] rounded-2xl px-4 py-4 opacity-0 -translate-y-2 scale-[0.98] pointer-events-none transition-all duration-300 ease-out origin-top"
+            role="dialog"
+            aria-label="Mobile navigation"
+          >
+            <div class="flex flex-col gap-3 text-sm">
+              <a href="index.html" class="text-base-muted hover:text-base-ink"
+                >Company</a
+              >
+              <a href="x1.html" class="text-base-muted hover:text-base-ink"
+                >X1</a
+              >
+              <a href="contact.html" class="text-base-ink">Contact</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE -->
+    <main class="bg-base-bg">
+      <section class="max-w-6xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24">
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <!-- Left copy -->
+          <div class="lg:col-span-5" data-fade>
+            <span class="badge">Contact • Collaboration • Pilots</span>
+
+            <h1 class="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">
+              Connect with Pixxivo
+            </h1>
+
+            <p class="mt-4 text-base-muted leading-relaxed">
+              Research collaboration, pilot evaluation, institutional
+              partnerships, or general inquiries — send a message and we’ll
+              respond via
+              <strong class="text-base-ink">contact@pixxivo.com</strong>.
+            </p>
+
+            <div
+              class="mt-8 rounded-2xl border border-base-line bg-base-card p-6"
+            >
+              <p class="text-sm font-semibold">Preferred channels</p>
+              <p class="mt-2 text-sm text-base-muted">
+                Email:
+                <a
+                  class="underline hover:text-base-ink"
+                  href="mailto:contact@pixxivo.com"
+                  >contact@pixxivo.com</a
+                >
+                <br />
+                Location: Trichy, Tamil Nadu • India
+              </p>
+            </div>
+
+            <p class="mt-6 text-sm text-base-muted">
+              Note: Pixxivo X1 is in active development and not available for
+              public sale. We welcome responsible collaboration.
+            </p>
+          </div>
+
+          <!-- Form -->
+          <div class="lg:col-span-7" data-fade>
+            <div
+              class="rounded-2xl border border-base-line bg-base-card p-6 md:p-8"
+            >
+              <h2 class="text-lg font-semibold">Send a message</h2>
+              <p class="mt-2 text-sm text-base-muted">
+                Choose an intent so we can route your message correctly.
+              </p>
+
+              <form id="contactForm" class="mt-6 space-y-5" novalidate>
+                <div class="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label class="text-sm font-medium">Name</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      autocomplete="name"
+                      placeholder="Your name"
+                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
+                      required
+                    />
+                    <p class="mt-2 text-xs text-base-muted">
+                      So we know who to reply to.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label class="text-sm font-medium">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="you@domain.com"
+                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
+                      required
+                    />
+                    <p class="mt-2 text-xs text-base-muted">
+                      We’ll respond to this address.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <label class="text-sm font-medium"
+                      >Affiliation (optional)</label
+                    >
+                    <input
+                      id="affiliation"
+                      name="affiliation"
+                      type="text"
+                      placeholder="Hospital / Lab / Organization"
+                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="text-sm font-medium">Intent</label>
+                    <select
+                      id="intent"
+                      name="intent"
+                      class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm"
+                      required
+                    >
+                      <option value="research">Research collaboration</option>
+                      <option value="pilot">Clinical pilot / evaluation</option>
+                      <option value="partnership">
+                        Institutional partnership
+                      </option>
+                      <option value="press">Press / media</option>
+                      <option value="general">General inquiry</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label class="text-sm font-medium">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Share context, your goal, and what you’re looking for…"
+                    class="mt-2 w-full rounded-xl border border-base-line bg-white/70 px-4 py-3 text-sm resize-none"
+                    required
+                  ></textarea>
+                  <p id="hint" class="mt-2 text-xs text-base-muted"></p>
+                </div>
+
+                <!-- Status line -->
+                <div
+                  id="statusBox"
+                  class="hidden rounded-xl border border-base-line px-4 py-3 text-sm"
+                ></div>
+
+                <div
+                  class="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between"
+                >
+                  <button
+                    id="sendBtn"
+                    type="submit"
+                    class="btn btn-primary w-full sm:w-auto"
+                    data-btn
+                  >
+                    Send message
+                  </button>
+
+                  <p class="text-xs text-base-muted">
+                    By sending, you agree to share this info with Pixxivo for
+                    contacting you back.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-base-line bg-base-bg">
+      <div
+        class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-base-muted"
+      >
+        <div data-fade>
+          <div class="text-base-ink font-medium">
+            Built in India. Designed for global healthcare systems.
+          </div>
+          <div class="mt-1 text-xs text-base-muted">
+            Founded & developed by
+            <span class="text-base-ink font-medium">Prateek</span>
+          </div>
+          <div class="mt-2">
+            © <span id="year"></span> Pixxivo • Trichy, Tamil Nadu
+          </div>
+        </div>
+
+        <div class="flex gap-4" data-fade>
+          <a href="index.html" class="hover:text-base-ink">Company</a>
+          <a href="x1.html" class="hover:text-base-ink">X1</a>
+        </div>
+      </div>
+      <a href="privacy.html" class="hover:text-base-ink">Privacy</a>
+      <a href="terms.html" class="hover:text-base-ink">Terms</a>
+    </footer>
+
+    <script>
+      // Footer year
+      // Intent hints (UX polish)
+      const intent = document.getElementById("intent");
+      const hint = document.getElementById("hint");
+      const hints = {
+        research:
+          "Mention datasets, validation plan, or what you want to study.",
+        pilot: "Share patient workflow, duration, and what outcomes you need.",
+        partnership:
+          "Tell us your institution, timeline, and collaboration scope.",
+        press: "Include your publication/channel and deadline.",
+        general: "Give context and your main question.",
+      };
+      const updateHint = () => {
+        hint.textContent = hints[intent.value] || "";
+      };
+      intent.addEventListener("change", updateHint);
+      updateHint();
+
+      // UI-only submit (backend will be added next)
+      const form = document.getElementById("contactForm");
+      const sendBtn = document.getElementById("sendBtn");
+      const statusBox = document.getElementById("statusBox");
+
+      function showStatus(msg, kind = "info") {
+        statusBox.classList.remove("hidden");
+        statusBox.textContent = msg;
+
+        // kind: info | ok | err
+        statusBox.style.background =
+          kind === "ok"
+            ? "rgba(16,185,129,0.08)"
+            : kind === "err"
+              ? "rgba(239,68,68,0.08)"
+              : "rgba(17,24,39,0.04)";
+
+        statusBox.style.borderColor =
+          kind === "ok"
+            ? "rgba(16,185,129,0.25)"
+            : kind === "err"
+              ? "rgba(239,68,68,0.25)"
+              : "rgba(228,231,235,0.9)";
+
+        statusBox.style.color = kind === "err" ? "#991B1B" : "#111827";
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          showStatus("Please fill in name, email, and message.", "err");
+          return;
+        }
+
+        sendBtn.disabled = true;
+        sendBtn.textContent = "Sending…";
+        showStatus(
+          "Preparing secure delivery… (backend not connected yet)",
+          "info",
+        );
+
+        // Next step: send POST to our Cloudflare Function
+        // We'll implement this next.
+        setTimeout(() => {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "Send message";
+          showStatus(
+            "UI ready. Next: connect Cloudflare Functions + Resend.",
+            "ok",
+          );
+        }, 700);
+      });
+    </script>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
