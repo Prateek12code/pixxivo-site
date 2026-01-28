@@ -220,3 +220,40 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeMenu();
   });
 })();
+
+
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    status.textContent = "Sending...";
+
+    try {
+      const res = await fetch(
+        "https://pixxivo-contact.krishaeo-code.workers.dev/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!res.ok) throw new Error();
+
+      status.textContent = "Message sent ✅";
+      form.reset();
+    } catch {
+      status.textContent = "Failed ❌ Try again";
+    }
+  });
+}
+
